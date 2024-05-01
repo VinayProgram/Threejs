@@ -65,8 +65,8 @@ const page = () => {
 
   }
   return (
-    <div className="bg-white grid  w-[100vw] text-center justify-center bg-gray-100 p-8 rounded-lg shadow-md">
-      <div className="text-2xl" id='mydata' >
+    <div  id='mydata' className="bg-white grid  w-[100vw] text-center justify-center bg-gray-100 p-8 rounded-lg shadow-md">
+      <div className="text-2xl" >
         <div className="">
           <h2 className="text-3xl font-bold mb-4">Vinay Tandale</h2>
           <p className="text-lg mb-4">Full Stack MERN Developer</p>
