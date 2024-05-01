@@ -76,15 +76,7 @@ const page = () => {
     <li>Government Projects</li>
     <li>Live Tracking System</li>
   </ul>
-  <div className="mt-4">
-    <h5>Contact Number: <span className="font-bold">7666949043</span></h5>
-    <h5>Email: <span className="font-bold">VinayTandale@gmail.com</span></h5>
-  </div>
-</div>
-
-
-      </div>
-      <h1 className=" mt-4 font-bold text-2xl">You Can Look My 3d Projects </h1>
+  <h1 className=" mt-4 font-bold text-2xl">You Can Look My 3d Projects </h1>
       <form className="max-w-sm mx-auto">
         <label
           for="Models"
@@ -109,6 +101,15 @@ const page = () => {
           <option value="GoHOME">Goback</option>
         </select>
       </form>
+  <div className="mt-4">
+    <h5>Contact Number: <span className="font-bold">7666949043</span></h5>
+    <h5>Email: <span className="font-bold">VinayTandale@gmail.com</span></h5>
+  </div>
+</div>
+
+
+      </div>
+     
       <div id="loader" className="text-3xl hidden" >Loading .....</div>
       
     </div>
