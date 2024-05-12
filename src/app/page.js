@@ -27,8 +27,8 @@ var constraints = {
   audio: false,
   video:{
   facingMode: {
-    exact: 'environment'
-  }
+      exact: 'environment'
+    }
 }
 };
 
@@ -43,9 +43,9 @@ navigator.mediaDevices.getUserMedia(constraints).then(function success(stream) {
     const loader = new GLTFLoader();
     const light = new THREE.HemisphereLight(0x330b51, 0x330b51, 5);
     scene.add(light.target);
-    const light1 = new THREE.AmbientLight(0xffffff); // soft white light
+    const light1 = new THREE.AmbientLight(0xffffff, 4); // soft white light
     scene.add(light1);
-    const directionalLight = new THREE.DirectionalLight(0xffffff);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 10);
     scene.add(directionalLight);
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.update();
