@@ -9,7 +9,7 @@ function Model(md) {
     renderer.setSize(window.innerWidth, window.innerHeight);
     const pmremGenerator = new THREE.PMREMGenerator(renderer);
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xffffff);
+    // scene.background = new THREE.Color(0xfhhhh);
     const camera = new THREE.PerspectiveCamera(
       105,
       window?.innerWidth / window?.innerHeight,
@@ -18,6 +18,24 @@ function Model(md) {
     );
     camera.position.set(5, 2, 8);
 
+var video = document.createElement('video');
+video.setAttribute('playsinline', '');
+video.setAttribute('autoplay', '');
+video.setAttribute('muted', '');
+
+var constraints = {
+  audio: false,
+  video:true
+};
+
+
+navigator.mediaDevices.getUserMedia(constraints).then(function success(stream) {
+  video.srcObject = stream;
+  const textureloader = new THREE.VideoTexture(video)
+  scene.background=textureloader
+});
+    
+    
     const loader = new GLTFLoader();
     const light = new THREE.HemisphereLight(0x330b51, 0x330b51, 5);
     scene.add(light.target);
@@ -32,7 +50,9 @@ function Model(md) {
       `${md}`,
       function (gltf) {
         console.log(gltf);
+        
         scene.add(gltf.scene);
+        
         document.getElementById('loader').style.display = 'none'
       },
       undefined,
@@ -47,7 +67,7 @@ function Model(md) {
     }
 
     animate();
-
+    // document.getElementById('bg').appendChild(renderer.domElement)
     document.body.appendChild(renderer.domElement);
 
   }
@@ -81,7 +101,7 @@ const page = () => {
             <h5>Email: <span class="font-bold">VinayTandale@gmail.com</span></h5>
           </div>
         </div>
-
+      
 
       </div>
       <h1 className="text-2xl font-bold"> You Can Look My 3d Projects</h1>
@@ -110,7 +130,7 @@ const page = () => {
         </select>
       </form>
       <div id="loader" className="text-3xl hidden" >Loading .....</div>
-
+     
     </div>
   );
 };
